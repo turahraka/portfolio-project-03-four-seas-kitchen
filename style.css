@@ -1,3 +1,15 @@
+:root {
+    --warna-utama: #c2410c;
+    --warna-utama-hover: #9a3412;
+    --warna-aksen: #fb923c;
+    --warna-aksen-hover: #fdba74;
+    --dark: #292524;
+    --dark-brown: #431407;
+    --tulisan-biasa: #292524;
+    --tulisan-redup: #57534e;
+    --latar-putih: #faf7f2;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,8 +21,8 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: #292524;
-    background-color: #faf7f2;
+    color: var(--tulisan-biasa);
+    background-color: var(--latar-putih);
     line-height: 1.6;
 }
 
@@ -18,22 +30,18 @@ section {
     padding: 100px 20px;
 }
 
-section > p:first-child {
+section>p:first-child {
     margin-bottom: 10px;
-
-    color: #c2410c;
-
+    color: var(--warna-utama);
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 3px;
 }
 
 section h2 {
-    margin: 0 0 25px;
-
-    color: #292524;
-
+    color: var(--tulisan-biasa);
     font-size: 42px;
+    margin: 0 0 25px;
     line-height: 1.15;
 }
 
@@ -41,9 +49,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     padding: 18px 40px;
-
     background-color: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid #e7e0d7;
 }
@@ -51,63 +57,53 @@ header {
 nav {
     max-width: 1200px;
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
 }
 
-nav > a {
-    color: #292524;
-
+nav>a {
+    color: var(--dark);
     text-decoration: none;
-
     font-size: 23px;
     font-weight: 900;
 }
 
-nav > a::first-letter {
-    color: #c2410c;
+nav>a::first-letter {
+    color: var(--warna-utama);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
 }
 
 nav ul {
     display: flex;
     gap: 28px;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
 }
 
 nav ul a {
-    position: relative;
-
-    color: #57534e;
-
     text-decoration: none;
+    position: relative;
+    color: var(--tulisan-redup);
     font-weight: 600;
 }
 
 nav ul a::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: -6px;
-
     width: 0;
     height: 2px;
-
-    background-color: #c2410c;
-
-    transition: width 0.3s;
+    background-color: var(--warna-utama);
+    transition: width 0.3s ease;
 }
 
 nav ul a:hover {
-    color: #c2410c;
+    color: var(--warna-utama);
 }
 
 nav ul a:hover::after {
@@ -116,102 +112,62 @@ nav ul a:hover::after {
 
 #home {
     min-height: 90vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            #fed7aa,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            #fde68a,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fff7ed,
-            #fffbeb,
-            #fef3c7
-        );
+    background: radial-gradient(circle at 20% 20%, #fed7aa, transparent 30%), radial-gradient(circle at 80% 70%, #fde68a, transparent 30%), linear-gradient(135deg, #fff7ed, #fffbeb, #fef3c7);
 }
 
-#home > p:first-child {
+#home>p:first-child {
     padding: 8px 16px;
-
     border: 1px solid #fdba74;
     border-radius: 30px;
-
     background-color: rgba(255, 255, 255, 0.6);
-
-    color: #c2410c;
+    color: var(--warna-utama);
 }
 
 #home h1 {
     max-width: 900px;
-
     margin: 15px 0;
-
-    color: #431407;
-
+    color: var(--dark-brown);
     font-size: clamp(52px, 9vw, 90px);
     line-height: 0.95;
     letter-spacing: -3px;
 }
 
-#home h1 + p {
+#home h1+p {
     max-width: 650px;
-
-    color: #57534e;
-
+    color: var(--tulisan-redup);
     font-size: 19px;
 }
 
 #home a,
-#product > a,
+#menu>a,
 #contact a {
     display: inline-block;
-
     margin-top: 25px;
     padding: 14px 28px;
-
     border-radius: 30px;
-
-    background-color: #c2410c;
-
+    background-color: var(--warna-utama);
     color: white;
-
     text-decoration: none;
     font-weight: 800;
-
     box-shadow: 0 8px 20px rgba(194, 65, 12, 0.2);
-
-    transition:
-        transform 0.3s,
-        background-color 0.3s,
-        box-shadow 0.3s;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 #home a:hover,
-#product > a:hover,
+#menu>a:hover,
 #contact a:hover {
     transform: translateY(-4px);
-
-    background-color: #9a3412;
-
+    background-color: var(--warna-utama-hover);
     box-shadow: 0 14px 30px rgba(154, 52, 18, 0.25);
 }
 
 #about {
     background-color: white;
-
     text-align: center;
 }
 
@@ -223,15 +179,12 @@ nav ul a:hover::after {
 
 #about p:not(:first-child) {
     max-width: 700px;
-
     margin: 15px auto;
-
-    color: #57534e;
+    color: var(--tulisan-redup);
 }
 
 #menu {
-    background-color: #292524;
-
+    background-color: var(--dark);
     text-align: center;
 }
 
@@ -241,56 +194,35 @@ nav ul a:hover::after {
 
 #menu article {
     display: inline-block;
-
     width: 45%;
     min-width: 280px;
-
     margin: 10px;
     padding: 30px;
-
     vertical-align: top;
-
-    background:
-        linear-gradient(
-            145deg,
-            #44403c,
-            #292524
-        );
-
-    border: 1px solid #57534e;
+    background: linear-gradient(145deg, #44403c, #292524);
+    border: 1px solid var(--tulisan-redup);
     border-radius: 20px;
-
     color: #e7e5e4;
-
     text-align: left;
-
-    transition:
-        transform 0.3s,
-        border-color 0.3s,
-        box-shadow 0.3s;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 #menu article:hover {
     transform: translateY(-8px);
-
-    border-color: #fb923c;
-
+    border-color: var(--warna-aksen-hover);
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
 }
 
-#menu article > p:first-child {
-    color: #fb923c;
-
+#menu article>p:first-child {
+    color: var(--warna-aksen);
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
 #menu article h3 {
-    margin: 10px 0;
-
     color: white;
-
+    margin: 10px 0;
     font-size: 26px;
 }
 
@@ -300,101 +232,74 @@ nav ul a:hover::after {
 
 #menu article p:last-child {
     color: #fdba74;
-
     font-size: 20px;
     font-weight: 800;
 }
 
 #why-us {
     background-color: #faf7f2;
-
     text-align: center;
 }
 
 #why-us article {
     display: inline-block;
-
     width: 30%;
     min-width: 250px;
-
     margin: 10px;
     padding: 30px;
-
     vertical-align: top;
-
     background-color: white;
-
     border: 1px solid #e7e0d7;
     border-radius: 18px;
-
     text-align: left;
-
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 #why-us article:hover {
     transform: translateY(-7px);
-
     box-shadow: 0 15px 30px rgba(68, 64, 60, 0.12);
 }
 
 #why-us article h3 {
-    color: #431407;
-
+    color: var(--dark-brown);
     font-size: 23px;
 }
 
 #contact {
-    background:
-        linear-gradient(
-            135deg,
-            #7c2d12,
-            #431407
-        );
-
+    background: linear-gradient(135deg, #7c2d12, #431407);
     color: #fff7ed;
-
     text-align: center;
 }
 
 #contact h2 {
     max-width: 800px;
+    color: #fff7ed;
     margin-left: auto;
     margin-right: auto;
-
-    color: #fff7ed;
 }
 
-#contact > p:not(:first-child) {
+#contact>p:not(:first-child) {
     color: #fed7aa;
 }
 
 #contact a {
-    background-color: #fb923c;
-
-    color: #431407;
+    background-color: var(--warna-aksen);
+    color: var(--dark-brown);
 }
 
 #contact a:hover {
-    background-color: #fdba74;
+    background-color: var(--warna-aksen-hover);
 }
 
 footer {
-    padding: 25px 20px;
-
     background-color: #1c1917;
-
     color: #a8a29e;
-
     text-align: center;
-
+    padding: 25px 20px;
     font-size: 14px;
 }
 
 @media (max-width: 700px) {
-
     header {
         padding: 18px 20px;
     }
@@ -406,7 +311,6 @@ footer {
 
     nav ul {
         gap: 15px;
-
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -424,18 +328,15 @@ footer {
         letter-spacing: -2px;
     }
 
-    #home h1 + p {
+    #home h1+p {
         font-size: 17px;
     }
 
     #menu article,
     #why-us article {
         display: block;
-
         width: 100%;
         max-width: 500px;
-
         margin: 15px auto;
     }
-
 }
